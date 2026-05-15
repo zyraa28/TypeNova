@@ -11,7 +11,7 @@
 
     <link rel="stylesheet" href="style.css">
 
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
 
 </head>
 
@@ -22,44 +22,108 @@
     <nav>
 
         <div class="logo">
-            ⌨️ TypeNova
+            TypeNova
         </div>
 
         <ul>
 
-            <li><a href="index.html">Home</a></li>
+            <li><a href="#">Home</a></li>
 
-            <li><a href="#typing">Typing Test</a></li>
+            <li><a href="#typing">Typing</a></li>
 
-            <li><a href="about.html">About</a></li>
+            <li><a href="#leaderboard">Leaderboard</a></li>
 
-            <li><a href="contact.html">Contact</a></li>
-
-            <li><a href="privacy.html">Privacy</a></li>
-
-            <li><a href="terms.html">Terms</a></li>
-
-            <li><a href="blog.html">Blog</a></li>
+            <li><a href="#features">Features</a></li>
 
         </ul>
 
     </nav>
 
-    <!-- HERO SECTION -->
+    <!-- LOGIN / SIGNUP -->
+
+    <section class="auth-section">
+
+        <div class="auth-box">
+
+            <h2>
+                Welcome to TypeNova
+            </h2>
+
+            <p>
+                Login or create account to save scores.
+            </p>
+
+            <input
+                type="email"
+                id="email"
+                placeholder="Enter email"
+            />
+
+            <input
+                type="password"
+                id="password"
+                placeholder="Enter password"
+            />
+
+            <div class="auth-buttons">
+
+                <button onclick="signup()">
+
+                    Sign Up
+
+                </button>
+
+                <button onclick="login()">
+
+                    Login
+
+                </button>
+
+                <button onclick="logout()">
+
+                    Logout
+
+                </button>
+
+            </div>
+
+            <p id="auth-status">
+
+                Not logged in
+
+            </p>
+
+        </div>
+
+    </section>
+
+    <!-- HERO -->
 
     <section class="hero">
 
+        <span class="badge">
+
+            Professional Typing Platform
+
+        </span>
+
         <h1>
-            Master Your <span>Typing Speed</span>
+
+            Improve Your Typing
+
+            <span>With Precision</span>
+
         </h1>
 
         <p>
-            Practice typing with real-time speed,
-            glowing effects, smooth animations
-            and professional UI experience.
+
+            Practice typing with clean analytics,
+            real-time speed tracking,
+            accuracy insights and online rankings.
+
         </p>
 
-        <a href="#typing" class="start-btn">
+        <a href="#typing" class="hero-btn">
 
             Start Typing
 
@@ -67,26 +131,32 @@
 
     </section>
 
-    <!-- TIMED TESTS -->
+    <!-- TEST MODES -->
 
     <section class="test-modes">
 
-        <h2>
-            Timed Typing Tests
-        </h2>
+        <div class="section-title">
+
+            <h2>
+                Choose Your Test
+            </h2>
+
+            <p>
+                Select a typing duration
+            </p>
+
+        </div>
 
         <div class="mode-grid">
-
-            <!-- 1 MIN -->
 
             <div class="mode-card">
 
                 <h3>
-                    1 Minute Test
+                    1 Minute
                 </h3>
 
                 <p>
-                    Quick speed challenge.
+                    Quick typing challenge.
                 </p>
 
                 <button onclick="setTimer(60)">
@@ -97,16 +167,14 @@
 
             </div>
 
-            <!-- 3 MIN -->
-
             <div class="mode-card">
 
                 <h3>
-                    3 Minute Test
+                    3 Minutes
                 </h3>
 
                 <p>
-                    Improve consistency and accuracy.
+                    Improve speed consistency.
                 </p>
 
                 <button onclick="setTimer(180)">
@@ -117,16 +185,14 @@
 
             </div>
 
-            <!-- 5 MIN -->
-
             <div class="mode-card">
 
                 <h3>
-                    5 Minute Test
+                    5 Minutes
                 </h3>
 
                 <p>
-                    Professional endurance challenge.
+                    Advanced endurance session.
                 </p>
 
                 <button onclick="setTimer(300)">
@@ -140,87 +206,104 @@
         </div>
 
     </section>
-    
-   <!-- TYPING SECTION -->
 
-<section class="typing-section" id="typing">
+    <!-- TYPING -->
 
-    <div class="typing-box">
+    <section class="typing-section" id="typing">
 
-        <!-- USERNAME -->
+        <div class="typing-box">
 
-        <input
-            type="text"
-            id="username"
-            placeholder="Enter your name..."
-            class="username-input"
-        />
+            <input
+                type="text"
+                id="username"
+                placeholder="Enter your name"
+                class="username-input"
+            />
 
-        <!-- TOP BAR -->
+            <div class="top-bar">
 
-        <div class="top-bar">
+                <div class="stat-box">
 
-            <div>
-                ⏱ Time:
-                <span id="timer">60</span>
+                    <span>
+                        Time
+                    </span>
+
+                    <h3 id="timer">
+                        60
+                    </h3>
+
+                </div>
+
+                <div class="stat-box">
+
+                    <span>
+                        WPM
+                    </span>
+
+                    <h3 id="wpm">
+                        0
+                    </h3>
+
+                </div>
+
+                <div class="stat-box">
+
+                    <span>
+                        Accuracy
+                    </span>
+
+                    <h3>
+
+                        <span id="accuracy">
+                            100
+                        </span>%
+
+                    </h3>
+
+                </div>
+
             </div>
 
-            <div>
-                ⚡ WPM:
-                <span id="wpm">0</span>
+            <div class="progress-container">
+
+                <div id="progress-bar"></div>
+
             </div>
 
-            <div>
-                🎯 Accuracy:
-                <span id="accuracy">100</span>%
-            </div>
+            <div id="quote"></div>
+
+            <textarea
+                id="input"
+                placeholder="Start typing here..."
+            ></textarea>
+
+            <button onclick="restartTest()" class="restart-btn">
+
+                Restart Test
+
+            </button>
 
         </div>
 
-        <!-- PROGRESS BAR -->
-
-        <div class="progress-container">
-
-            <div id="progress-bar"></div>
-
-        </div>
-
-        <!-- QUOTE -->
-
-        <div id="quote"></div>
-
-        <!-- INPUT -->
-
-        <textarea
-            id="input"
-            placeholder="Start typing here..."
-        ></textarea>
-
-        <!-- RESTART -->
-
-        <button onclick="restartTest()">
-
-            Restart Test
-
-        </button>
-
-    </div>
-
-</section>
+    </section>
 
     <!-- LEADERBOARD -->
 
-    <section class="leaderboard">
+    <section class="leaderboard" id="leaderboard">
 
-        <h2>
-            🏆 Global Leaderboard
-        </h2>
+        <div class="section-title">
 
-        <div id="leaderboard-list">
+            <h2>
+                Leaderboard
+            </h2>
 
-            Loading leaderboard...
+            <p>
+                Top typing performances
+            </p>
 
         </div>
+
+        <div id="leaderboard-list"></div>
 
     </section>
 
@@ -228,20 +311,28 @@
 
     <section class="features" id="features">
 
-        <h2>
-            Features
-        </h2>
+        <div class="section-title">
+
+            <h2>
+                Why TypeNova?
+            </h2>
+
+            <p>
+                Built for modern typists
+            </p>
+
+        </div>
 
         <div class="feature-grid">
 
             <div class="card">
 
                 <h3>
-                    ⚡ Real-Time Typing
+                    Real-Time Analytics
                 </h3>
 
                 <p>
-                    Live WPM, accuracy and glowing typing feedback.
+                    Track WPM and accuracy instantly.
                 </p>
 
             </div>
@@ -249,11 +340,11 @@
             <div class="card">
 
                 <h3>
-                    🎵 Sound Effects
+                    Clean Interface
                 </h3>
 
                 <p>
-                    Keyboard sounds and immersive typing experience.
+                    Distraction-free professional UI.
                 </p>
 
             </div>
@@ -261,11 +352,11 @@
             <div class="card">
 
                 <h3>
-                    🌙 Modern UI
+                    Global Leaderboards
                 </h3>
 
                 <p>
-                    Glassmorphism futuristic responsive design.
+                    Compete with typists online.
                 </p>
 
             </div>
@@ -300,6 +391,14 @@
             limit
         } from "https://www.gstatic.com/firebasejs/10.12.2/firebase-firestore.js";
 
+        import {
+            getAuth,
+            createUserWithEmailAndPassword,
+            signInWithEmailAndPassword,
+            signOut,
+            onAuthStateChanged
+        } from "https://www.gstatic.com/firebasejs/10.12.2/firebase-auth.js";
+
         const firebaseConfig = {
 
             apiKey: "AIzaSyA8UCVsgZvn9Jf_aEg4WVNKBub5nrC3E0c",
@@ -320,7 +419,11 @@
 
         const db = getFirestore(app);
 
+        const auth = getAuth(app);
+
         window.db = db;
+
+        window.auth = auth;
 
         window.collection = collection;
 
@@ -333,6 +436,14 @@
         window.orderBy = orderBy;
 
         window.limit = limit;
+
+        window.createUserWithEmailAndPassword = createUserWithEmailAndPassword;
+
+        window.signInWithEmailAndPassword = signInWithEmailAndPassword;
+
+        window.signOut = signOut;
+
+        window.onAuthStateChanged = onAuthStateChanged;
 
     </script>
 

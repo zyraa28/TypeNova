@@ -303,3 +303,69 @@ async function loadLeaderboard(){
 }
 
 loadLeaderboard();
+
+const authStatus = document.getElementById("auth-status");
+
+async function signup(){
+
+    const email = document.getElementById("email").value;
+
+    const password = document.getElementById("password").value;
+
+    try{
+
+        await createUserWithEmailAndPassword(auth, email, password);
+
+        authStatus.innerText = "Account Created Successfully";
+
+    }
+
+    catch(error){
+
+        authStatus.innerText = error.message;
+
+    }
+}
+
+async function login(){
+
+    const email = document.getElementById("email").value;
+
+    const password = document.getElementById("password").value;
+
+    try{
+
+        await signInWithEmailAndPassword(auth, email, password);
+
+        authStatus.innerText = "Login Successful";
+
+    }
+
+    catch(error){
+
+        authStatus.innerText = error.message;
+
+    }
+}
+
+async function logout(){
+
+    await signOut(auth);
+
+    authStatus.innerText = "Logged Out";
+}
+
+onAuthStateChanged(auth, (user) => {
+
+    if(user){
+
+        authStatus.innerText = `Logged in as ${user.email}`;
+
+    }
+
+    else{
+
+        authStatus.innerText = "Not logged in";
+
+    }
+});
