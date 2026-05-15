@@ -610,3 +610,19 @@ footer{
 
     color:#60a5fa;
 }
+.hero-btn{
+    display:inline-block;
+    margin-top:30px;
+    padding:14px 30px;
+    background:#3b82f6;
+    color:white;
+    text-decoration:none;
+    border-radius:10px;
+    font-weight:600;
+    transition:0.3s;
+}
+
+.hero-btn:hover{
+    background:#2563eb;
+    transform:translateY(-2px);
+}
