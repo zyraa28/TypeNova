@@ -1,0 +1,262 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>TypeNova</title>
+
+    <link rel="stylesheet" href="style.css">
+
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
+</head>
+
+<body>
+
+    <!-- NAVBAR -->
+
+    <nav>
+
+        <div class="logo">
+            ⌨️ TypeNova
+        </div>
+
+        <ul>
+
+            <li>
+                <a href="#">Home</a>
+            </li>
+
+            <li>
+                <a href="#typing">Typing Test</a>
+            </li>
+
+            <li>
+                <a href="#features">Features</a>
+            </li>
+
+        </ul>
+
+    </nav>
+
+    <!-- HERO SECTION -->
+
+    <section class="hero">
+
+        <h1>
+            Master Your <span>Typing Speed</span>
+        </h1>
+
+        <p>
+            Practice typing with real-time speed,
+            glowing effects, smooth animations
+            and professional UI experience.
+        </p>
+
+        <a href="#typing" class="start-btn">
+
+            Start Typing
+
+        </a>
+
+    </section>
+
+    <!-- TIMED TESTS -->
+
+    <section class="test-modes">
+
+        <h2>
+            Timed Typing Tests
+        </h2>
+
+        <div class="mode-grid">
+
+            <!-- 1 MIN -->
+
+            <div class="mode-card">
+
+                <h3>
+                    1 Minute Test
+                </h3>
+
+                <p>
+                    Quick speed challenge.
+                </p>
+
+                <button onclick="setTimer(60)">
+
+                    Start Test
+
+                </button>
+
+            </div>
+
+            <!-- 3 MIN -->
+
+            <div class="mode-card">
+
+                <h3>
+                    3 Minute Test
+                </h3>
+
+                <p>
+                    Improve consistency and accuracy.
+                </p>
+
+                <button onclick="setTimer(180)">
+
+                    Start Test
+
+                </button>
+
+            </div>
+
+            <!-- 5 MIN -->
+
+            <div class="mode-card">
+
+                <h3>
+                    5 Minute Test
+                </h3>
+
+                <p>
+                    Professional endurance challenge.
+                </p>
+
+                <button onclick="setTimer(300)">
+
+                    Start Test
+
+                </button>
+
+            </div>
+
+        </div>
+
+    </section>
+
+    <!-- TYPING SECTION -->
+
+    <section class="typing-section" id="typing">
+
+        <div class="typing-box">
+
+            <!-- TOP BAR -->
+
+            <div class="top-bar">
+
+                <div>
+                    ⏱ Time:
+                    <span id="timer">60</span>
+                </div>
+
+                <div>
+                    ⚡ WPM:
+                    <span id="wpm">0</span>
+                </div>
+
+                <div>
+                    🎯 Accuracy:
+                    <span id="accuracy">100</span>%
+                </div>
+
+            </div>
+
+            <!-- PROGRESS BAR -->
+
+            <div class="progress-container">
+
+                <div id="progress-bar"></div>
+
+            </div>
+
+            <!-- QUOTE -->
+
+            <div id="quote"></div>
+
+            <!-- INPUT -->
+
+            <textarea
+                id="input"
+                placeholder="Start typing here..."
+            ></textarea>
+
+            <!-- RESTART -->
+
+            <button onclick="restartTest()">
+
+                Restart Test
+
+            </button>
+
+        </div>
+
+    </section>
+
+    <!-- FEATURES -->
+
+    <section class="features" id="features">
+
+        <h2>
+            Features
+        </h2>
+
+        <div class="feature-grid">
+
+            <div class="card">
+
+                <h3>
+                    ⚡ Real-Time Typing
+                </h3>
+
+                <p>
+                    Live WPM, accuracy and glowing typing feedback.
+                </p>
+
+            </div>
+
+            <div class="card">
+
+                <h3>
+                    🎵 Sound Effects
+                </h3>
+
+                <p>
+                    Keyboard sounds and immersive typing experience.
+                </p>
+
+            </div>
+
+            <div class="card">
+
+                <h3>
+                    🌙 Modern UI
+                </h3>
+
+                <p>
+                    Glassmorphism futuristic responsive design.
+                </p>
+
+            </div>
+
+        </div>
+
+    </section>
+
+    <!-- FOOTER -->
+
+    <footer>
+
+        <p>
+            © 2026 TypeNova. All rights reserved.
+        </p>
+
+    </footer>
+
+    <script src="script.js"></script>
+
+</body>
+</html>
