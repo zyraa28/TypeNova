@@ -10,6 +10,8 @@ const accuracyElement = document.getElementById("accuracy");
 
 const progressBar = document.getElementById("progress-bar");
 
+const leaderboardList = document.getElementById("leaderboard-list");
+
 const quotes = [
 
     "The quick brown fox jumps over the lazy dog.",
@@ -27,6 +29,8 @@ const quotes = [
 let currentQuote = "";
 
 let time = 60;
+
+let originalTime = 60;
 
 let timerStarted = false;
 
@@ -54,7 +58,7 @@ function loadQuote(){
 
 loadQuote();
 
-input.addEventListener("input", () => {
+input.addEventListener("input", async () => {
 
     if(!timerStarted){
 
@@ -148,9 +152,37 @@ input.addEventListener("input", () => {
 
     progressBar.style.width = progress + "%";
 
-});
+    if(progress >= 100){
 
-let originalTime = 60;
+        clearInterval(interval);
+
+        input.disabled = true;
+
+        try{
+
+            await addDoc(collection(db, "leaderboard"), {
+
+                wpm: wpm,
+
+                accuracy: accuracy,
+
+                created: Date.now()
+
+            });
+
+            loadLeaderboard();
+
+        }
+
+        catch(error){
+
+            console.log(error);
+
+        }
+
+    }
+
+});
 
 function setTimer(seconds){
 
@@ -221,3 +253,53 @@ function restartTest(){
     loadQuote();
 
 }
+
+async function loadLeaderboard(){
+
+    leaderboardList.innerHTML = "Loading...";
+
+    try{
+
+        const q = query(
+
+            collection(db, "leaderboard"),
+
+            orderBy("wpm", "desc"),
+
+            limit(10)
+
+        );
+
+        const querySnapshot = await getDocs(q);
+
+        leaderboardList.innerHTML = "";
+
+        querySnapshot.forEach((doc) => {
+
+            const data = doc.data();
+
+            leaderboardList.innerHTML += `
+
+                <div class="card">
+
+                    <h3>⚡ ${data.wpm} WPM</h3>
+
+                    <p>🎯 Accuracy: ${data.accuracy}%</p>
+
+                </div>
+
+            `;
+
+        });
+
+    }
+
+    catch(error){
+
+        console.log(error);
+
+    }
+
+}
+
+loadLeaderboard();

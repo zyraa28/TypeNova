@@ -140,64 +140,73 @@
         </div>
 
     </section>
+    
+   <!-- TYPING SECTION -->
 
-    <!-- TYPING SECTION -->
+<section class="typing-section" id="typing">
 
-    <section class="typing-section" id="typing">
+    <div class="typing-box">
 
-        <div class="typing-box">
+        <!-- USERNAME -->
 
-            <!-- TOP BAR -->
+        <input
+            type="text"
+            id="username"
+            placeholder="Enter your name..."
+            class="username-input"
+        />
 
-            <div class="top-bar">
+        <!-- TOP BAR -->
 
-                <div>
-                    ⏱ Time:
-                    <span id="timer">60</span>
-                </div>
+        <div class="top-bar">
 
-                <div>
-                    ⚡ WPM:
-                    <span id="wpm">0</span>
-                </div>
-
-                <div>
-                    🎯 Accuracy:
-                    <span id="accuracy">100</span>%
-                </div>
-
+            <div>
+                ⏱ Time:
+                <span id="timer">60</span>
             </div>
 
-            <!-- PROGRESS BAR -->
-
-            <div class="progress-container">
-
-                <div id="progress-bar"></div>
-
+            <div>
+                ⚡ WPM:
+                <span id="wpm">0</span>
             </div>
 
-            <!-- QUOTE -->
-
-            <div id="quote"></div>
-
-            <!-- INPUT -->
-
-            <textarea
-                id="input"
-                placeholder="Start typing here..."
-            ></textarea>
-
-            <!-- RESTART -->
-
-            <button onclick="restartTest()">
-
-                Restart Test
-
-            </button>
+            <div>
+                🎯 Accuracy:
+                <span id="accuracy">100</span>%
+            </div>
 
         </div>
 
-    </section>
+        <!-- PROGRESS BAR -->
+
+        <div class="progress-container">
+
+            <div id="progress-bar"></div>
+
+        </div>
+
+        <!-- QUOTE -->
+
+        <div id="quote"></div>
+
+        <!-- INPUT -->
+
+        <textarea
+            id="input"
+            placeholder="Start typing here..."
+        ></textarea>
+
+        <!-- RESTART -->
+
+        <button onclick="restartTest()">
+
+            Restart Test
+
+        </button>
+
+    </div>
+
+</section>
 
     <!-- LEADERBOARD -->
 
