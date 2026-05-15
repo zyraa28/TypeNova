@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
 
     <meta charset="UTF-8">
@@ -26,13 +27,19 @@
 
         <ul>
 
-           <li><a href="index.html">Home</a></li>
-    <li><a href="#typing">Typing Test</a></li>
-    <li><a href="about.html">About</a></li>
-    <li><a href="contact.html">Contact</a></li>
-    <li><a href="privacy.html">Privacy</a></li>
-    <li><a href="terms.html">Terms</a></li>
-    <li><a href="blog.html">Blog</a></li>
+            <li><a href="index.html">Home</a></li>
+
+            <li><a href="#typing">Typing Test</a></li>
+
+            <li><a href="about.html">About</a></li>
+
+            <li><a href="contact.html">Contact</a></li>
+
+            <li><a href="privacy.html">Privacy</a></li>
+
+            <li><a href="terms.html">Terms</a></li>
+
+            <li><a href="blog.html">Blog</a></li>
 
         </ul>
 
@@ -192,6 +199,22 @@
 
     </section>
 
+    <!-- LEADERBOARD -->
+
+    <section class="leaderboard">
+
+        <h2>
+            🏆 Global Leaderboard
+        </h2>
+
+        <div id="leaderboard-list">
+
+            Loading leaderboard...
+
+        </div>
+
+    </section>
+
     <!-- FEATURES -->
 
     <section class="features" id="features">
@@ -252,7 +275,60 @@
 
     </footer>
 
+    <!-- FIREBASE -->
+
+    <script type="module">
+
+        import { initializeApp } from "https://www.gstatic.com/firebasejs/10.12.2/firebase-app.js";
+
+        import {
+            getFirestore,
+            collection,
+            addDoc,
+            getDocs,
+            query,
+            orderBy,
+            limit
+        } from "https://www.gstatic.com/firebasejs/10.12.2/firebase-firestore.js";
+
+        const firebaseConfig = {
+
+            apiKey: "AIzaSyA8UCVsgZvn9Jf_aEg4WVNKBub5nrC3E0c",
+
+            authDomain: "typenova-af826.firebaseapp.com",
+
+            projectId: "typenova-af826",
+
+            storageBucket: "typenova-af826.firebasestorage.app",
+
+            messagingSenderId: "920363382526",
+
+            appId: "1:920363382526:web:2e5f9fe028c79fe8f857af"
+
+        };
+
+        const app = initializeApp(firebaseConfig);
+
+        const db = getFirestore(app);
+
+        window.db = db;
+
+        window.collection = collection;
+
+        window.addDoc = addDoc;
+
+        window.getDocs = getDocs;
+
+        window.query = query;
+
+        window.orderBy = orderBy;
+
+        window.limit = limit;
+
+    </script>
+
     <script src="script.js"></script>
 
 </body>
+
 </html>
