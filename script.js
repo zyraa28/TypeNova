@@ -23,7 +23,6 @@ const quotes = [
     "Typing fast improves productivity and focus.",
 
     "Success comes through consistency and practice."
-
 ];
 
 let currentQuote = "";
@@ -222,7 +221,7 @@ function startTimer(){
 
             input.disabled = true;
 
-            alert("Time Over!");
+           showResultModal();
 
         }
 
@@ -369,3 +368,34 @@ onAuthStateChanged(auth, (user) => {
 
     }
 });
+const menuToggle = document.getElementById("menu-toggle");
+
+const navLinks = document.getElementById("nav-links");
+
+menuToggle.addEventListener("click", () => {
+
+    navLinks.classList.toggle("active");
+
+});
+const resultModal = document.getElementById("result-modal");
+
+const finalWpm = document.getElementById("final-wpm");
+
+const finalAccuracy = document.getElementById("final-accuracy");
+
+function showResultModal(){
+
+    finalWpm.innerText = wpmElement.innerText;
+
+    finalAccuracy.innerText = accuracyElement.innerText + "%";
+
+    resultModal.style.display = "flex";
+
+}
+
+function closeModal(){
+
+    resultModal.style.display = "none";
+
+}
+

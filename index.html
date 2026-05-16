@@ -21,29 +21,39 @@
 
     <nav>
 
-        <div class="logo">
-            TypeNova
-        </div>
+    <div class="logo">
+        TypeNova
+    </div>
 
-        <ul>
+    <div class="menu-toggle" id="menu-toggle">
 
-           <ul>
-    <li><a href="#">Home</a></li>
-    <li><a href="#typing">Typing</a></li>
-    <li><a href="#leaderboard">Leaderboard</a></li>
-    <li><a href="#features">Features</a></li>
+        ☰
 
-    <li><a href="about.html">About</a></li>
-    <li><a href="contact.html">Contact</a></li>
-    <li><a href="privacy.html">Privacy</a></li>
-    <li><a href="terms.html">Terms</a></li>
-    <li><a href="blog.html">Blog</a></li>
-</ul>
+    </div>
 
-        </ul>
+    <ul id="nav-links">
 
-    </nav>
+        <li><a href="#">Home</a></li>
 
+        <li><a href="#typing">Typing</a></li>
+
+        <li><a href="#leaderboard">Leaderboard</a></li>
+
+        <li><a href="#features">Features</a></li>
+
+        <li><a href="about.html">About</a></li>
+
+        <li><a href="contact.html">Contact</a></li>
+
+        <li><a href="privacy.html">Privacy</a></li>
+
+        <li><a href="terms.html">Terms</a></li>
+
+        <li><a href="blog.html">Blog</a></li>
+
+    </ul>
+
+</nav>
     <!-- LOGIN / SIGNUP -->
 
     <section class="auth-section">
@@ -369,7 +379,50 @@
         </div>
 
     </section>
+    
+<!-- RESULT MODAL -->
 
+<div class="result-modal" id="result-modal">
+
+    <div class="result-box">
+
+        <h2>
+            Test Completed 🎉
+        </h2>
+
+        <div class="result-stats">
+
+            <div class="result-card">
+
+                <span>⚡ WPM</span>
+
+                <h3 id="final-wpm">
+                    0
+                </h3>
+
+            </div>
+
+            <div class="result-card">
+
+                <span>🎯 Accuracy</span>
+
+                <h3 id="final-accuracy">
+                    0%
+                </h3>
+
+            </div>
+
+        </div>
+
+        <button onclick="closeModal()">
+
+            Continue
+
+        </button>
+
+    </div>
+
+</div>
     <!-- FOOTER -->
 
     <footer>
